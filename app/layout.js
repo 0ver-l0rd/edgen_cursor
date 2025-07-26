@@ -24,7 +24,9 @@ export default function RootLayout({ children }) {
         { 
           pageLanguage: "en",
           layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-          autoDisplay: false
+          autoDisplay: false,
+          includedLanguages: "en,es,fr,de,it,pt,ru,ja,ko,zh-CN,ar,hi",
+          gaTrack: false
         },
         "google_translate_element"
       );
@@ -61,14 +63,16 @@ export default function RootLayout({ children }) {
           <title>Knoq Learning Platform</title>
         </head>
         <body className={inter.className}>
-          {/* Enhanced Language Changer */}
-          <div className="google-translate-container">
+          {/* Compact Professional Language Changer */}
+          <div className="language-changer-compact">
+            <div className="language-icon">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+              </svg>
+            </div>
             <div
               id="google_translate_element"
-              style={{ 
-                minWidth: '120px',
-                minHeight: '40px'
-              }}
+              className="translate-element"
             ></div>
           </div>
 

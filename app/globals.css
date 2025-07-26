@@ -376,64 +376,107 @@
 }
 
 /* Enhanced Language Changer Styles */
-.language-changer {
+.language-changer-compact {
   position: fixed;
   top: 20px;
   right: 20px;
   z-index: 1000;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
-  border: 2px solid rgba(59, 130, 246, 0.3);
-  border-radius: 12px;
-  padding: 8px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-}
-
-.language-changer:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-  border-color: rgba(59, 130, 246, 0.5);
-}
-
-.language-changer select {
-  background: transparent;
-  border: none;
-  color: var(--knoq-primary-dark);
-  font-weight: 600;
-  padding: 4px 8px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
   border-radius: 8px;
-  cursor: pointer;
-  outline: none;
-}
-
-.language-changer select:focus {
-  background: rgba(59, 130, 246, 0.1);
-}
-
-/* Enhanced Google Translate Styles */
-.google-translate-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  border: 2px solid rgba(59, 130, 246, 0.3);
-  border-radius: 12px;
-  padding: 8px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  padding: 6px 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 32px;
+  min-height: 32px;
 }
 
-.google-translate-container:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-  border-color: rgba(59, 130, 246, 0.5);
+.language-changer-compact:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.language-icon {
+  color: var(--knoq-primary-dark);
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.language-changer-compact:hover .language-icon {
+  opacity: 1;
+}
+
+.translate-element {
+  min-width: 80px;
+  min-height: 24px;
+}
+
+/* Custom Google Translate Styles */
+.goog-te-gadget {
+  font-family: inherit !important;
+  font-size: 12px !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+  background: transparent !important;
+  border: none !important;
+  color: var(--knoq-primary-dark) !important;
+  font-weight: 500 !important;
+  padding: 0 !important;
+  outline: none !important;
+  cursor: pointer !important;
+  font-size: 12px !important;
+}
+
+.goog-te-gadget .goog-te-combo:focus {
+  background: rgba(59, 130, 246, 0.1) !important;
+  border-radius: 4px !important;
+}
+
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+.goog-te-menu-value {
+  color: var(--knoq-primary-dark) !important;
+  font-weight: 500 !important;
+}
+
+.goog-te-menu-value span:first-child {
+  color: var(--knoq-primary-dark) !important;
+}
+
+.goog-te-menu-value span:last-child {
+  display: none !important;
 }
 
 /* Hide the Google Translate banner and the widget gadget */
 .VIpgJd-ZVi9od-l4eHX-hSRGPd{
+  display: none !important;
+}
+
+.skiptranslate {
+  display: none !important;
+}
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+#goog-gt-tt {
+  display: none !important;
+}
+
+.goog-te-balloon-frame {
+  display: none !important;
+}
+
+.goog-te-balloon-frame.skiptranslate {
   display: none !important;
 }
 
@@ -490,18 +533,25 @@
   z-index: 1000;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
-  border: 2px solid rgba(59, 130, 246, 0.3);
-  border-radius: 12px;
-  padding: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.theme-switcher:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-color: rgba(59, 130, 246, 0.4);
 }
 
 .theme-option {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   border: 2px solid transparent;
   cursor: pointer;
