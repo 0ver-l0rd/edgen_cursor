@@ -68,6 +68,13 @@
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
     min-height: 100vh;
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 }
 
@@ -380,7 +387,7 @@
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 1000;
+  z-index: 9999;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(59, 130, 246, 0.2);
@@ -393,6 +400,7 @@
   gap: 6px;
   min-width: 32px;
   min-height: 32px;
+  pointer-events: auto;
 }
 
 .language-changer-compact:hover {
@@ -530,7 +538,7 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 1000;
+  z-index: 9999;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(59, 130, 246, 0.2);
@@ -541,6 +549,7 @@
   flex-direction: column;
   gap: 6px;
   transition: all 0.3s ease;
+  pointer-events: auto;
 }
 
 .theme-switcher:hover {
@@ -642,4 +651,34 @@
   .container-padding {
     padding: 0 4rem;
   }
+}
+
+/* Ensure proper scrolling */
+#__next {
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Main content area */
+main {
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Dashboard specific fixes */
+.dashboard-content {
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-bottom: 100px;
+}
+
+/* Ensure fixed elements don't block content */
+.language-changer-compact,
+.theme-switcher {
+  position: fixed !important;
+  z-index: 9999 !important;
+  pointer-events: auto !important;
 }

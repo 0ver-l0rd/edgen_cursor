@@ -16,7 +16,7 @@ function DashboardLayout({ children }) {
   }
   return (
     <UserCourseListContext.Provider value={{userCourseList,setUserCourseList}}>
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dashboard-content">
       {showArrow && (
         <div className="fixed top-4 left-4 z-50 md:hidden">
           <div className="professional-glass rounded-full p-3 cursor-pointer hover:scale-110 transition-all duration-300 shadow-professional" onClick={setState}>
@@ -36,7 +36,7 @@ function DashboardLayout({ children }) {
       
       <div className="md:ml-72">
         <Header/>
-        <div className="p-6 md:p-8">
+        <div className="p-6 md:p-8 pb-20">
           <div className="professional-card rounded-3xl p-8 shadow-professional-lg border border-white/60 fade-in-up">
             {children}
           </div>
