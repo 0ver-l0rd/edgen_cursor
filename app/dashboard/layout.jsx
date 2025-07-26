@@ -25,7 +25,7 @@ function DashboardLayout({ children }) {
         </div>
       )}
 
-      <div className={`md:w-64 relative ${showSideBar ? 'w-70' : 'hidden'} md:block`}>
+      <div className={`md:w-72 relative ${showSideBar ? 'w-80' : 'hidden'} md:block`}>
         <div className="fixed top-4 left-4 z-50 md:hidden">
           <div className="professional-glass rounded-full p-3 cursor-pointer hover:scale-110 transition-all duration-300 shadow-professional" onClick={setState}>
             <HiOutlineArrowLeft className="text-2xl text-slate-700" />
@@ -34,10 +34,10 @@ function DashboardLayout({ children }) {
         <SideBar setState={setState}/>
       </div>
       
-      <div className="md:ml-64">
+      <div className="md:ml-72">
         <Header/>
         <div className="p-6 md:p-8">
-          <div className="professional-card rounded-3xl p-8 shadow-professional-lg border border-white/60">
+          <div className="professional-card rounded-3xl p-8 shadow-professional-lg border border-white/60 fade-in-up">
             {children}
           </div>
         </div>
